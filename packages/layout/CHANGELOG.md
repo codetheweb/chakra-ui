@@ -1,5 +1,39 @@
 # Change Log
 
+## 1.3.3
+
+### Patch Changes
+
+- [`da443cd67`](https://github.com/chakra-ui/chakra-ui/commit/da443cd67289122d661bdab802d0ccb3740eb707)
+  [#3584](https://github.com/chakra-ui/chakra-ui/pull/3584) Thanks
+  [@isBatak](https://github.com/isBatak)! - Fix: aspect ratio SSR `<style/>` tag
+  display
+
+- Updated dependencies
+  [[`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/icon@1.1.3
+
+## 1.3.2
+
+### Patch Changes
+
+- [`f60e5c174`](https://github.com/chakra-ui/chakra-ui/commit/f60e5c174e07730cf073f2bf53ac6e0c8a66d0c1)
+  [#3509](https://github.com/chakra-ui/chakra-ui/pull/3509) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - Simplify wrap style
+  management to use CSS custom properties.
+
+* [`dedc2d45f`](https://github.com/chakra-ui/chakra-ui/commit/dedc2d45fd8e568f9162bcf406b3059819eff6ff)
+  [#3463](https://github.com/chakra-ui/chakra-ui/pull/3463) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - `SimpleGrid`: Avoid grid
+  blow by adding `minmax(0, 1fr)`
+
+* Updated dependencies
+  [[`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/icon@1.1.2
+
 ## 1.3.1
 
 ### Patch Changes

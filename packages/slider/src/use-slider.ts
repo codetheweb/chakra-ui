@@ -14,18 +14,20 @@ import {
   clampValue,
   dataAttr,
   Dict,
-  EventKeyMap,
   focus,
   getBox,
   getOwnerDocument,
-  isRightClick,
-  mergeRefs,
-  normalizeEventKey,
   percentToValue,
-  PropGetter,
   roundValueToStep,
   valueToPercent,
 } from "@chakra-ui/utils"
+import {
+  mergeRefs,
+  normalizeEventKey,
+  isRightClick,
+  PropGetter,
+  EventKeyMap,
+} from "@chakra-ui/react-utils"
 import { CSSProperties, useCallback, useMemo, useRef, useState } from "react"
 
 export interface UseSliderProps {
@@ -184,7 +186,6 @@ export function useSlider(props: UseSliderProps) {
    * or greater than max
    */
   const value = clampValue(computedValue, min, max)
-  const prev = useRef<number>()
 
   const reversedValue = max - value + min
   const trackValue = isReversed ? reversedValue : value
@@ -246,7 +247,6 @@ export function useSlider(props: UseSliderProps) {
     (value: number) => {
       // bail out if slider isn't interactive
       if (!isInteractive) return
-      prev.current = value
       value = parseFloat(roundValueToStep(value, min, oneStep))
       value = clampValue(value, min, max)
       setValue(value)
@@ -385,13 +385,12 @@ export function useSlider(props: UseSliderProps) {
 
   useUpdateEffect(() => {
     if (thumbRef.current && focusThumbOnChange) {
-      focus(thumbRef.current)
+      focus(thumbRef.current, { nextTick: true })
     }
   }, [value])
 
   useUpdateEffect(() => {
-    const shouldUpdate =
-      !isDragging && eventSource !== "keyboard" && prev.current !== value
+    const shouldUpdate = !isDragging && eventSource !== "keyboard"
 
     if (shouldUpdate) {
       onChangeEnd?.(value)
@@ -411,7 +410,6 @@ export function useSlider(props: UseSliderProps) {
     if (!isInteractive || !rootRef.current) return
 
     setDragging.on()
-    prev.current = value
     onChangeStart?.(value)
 
     const doc = getOwnerDocument(rootRef.current)
@@ -447,7 +445,6 @@ export function useSlider(props: UseSliderProps) {
     event.preventDefault()
 
     setDragging.on()
-    prev.current = value
     onChangeStart?.(value)
 
     const doc = getOwnerDocument(rootRef.current)

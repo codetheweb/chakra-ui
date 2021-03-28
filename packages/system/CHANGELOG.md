@@ -1,5 +1,66 @@
 # Change Log
 
+## 1.5.1
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a576f4de8`](https://github.com/chakra-ui/chakra-ui/commit/a576f4de850706ea7088c8a6ea687269cad05e69)]:
+  - @chakra-ui/styled-system@1.9.1
+
+## 1.5.0
+
+### Minor Changes
+
+- [`035d5726e`](https://github.com/chakra-ui/chakra-ui/commit/035d5726e28396ef487b9801d7e2fa57677c703c)
+  [#3529](https://github.com/chakra-ui/chakra-ui/pull/3529) Thanks
+  [@callum-mellorreed-privitar](https://github.com/callum-mellorreed-privitar)! -
+  Add support for `textStyle` and `layerStyle` theme type generation to
+  `@chakra-ui/cli`
+
+### Patch Changes
+
+- [`96139067d`](https://github.com/chakra-ui/chakra-ui/commit/96139067daa4b9a606b60c73f28a88ccd99d983b)
+  [#3551](https://github.com/chakra-ui/chakra-ui/pull/3551) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - Fix: only return an array
+  in `toCSSObject` when `css` prop is passed.
+
+- Updated dependencies
+  [[`d70515fc2`](https://github.com/chakra-ui/chakra-ui/commit/d70515fc20279b5b2acf9a2db2bda0289b8c5408),
+  [`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`035d5726e`](https://github.com/chakra-ui/chakra-ui/commit/035d5726e28396ef487b9801d7e2fa57677c703c),
+  [`c3dcaabbc`](https://github.com/chakra-ui/chakra-ui/commit/c3dcaabbcf52ab9805a622f4e9833ad26cad9318),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b),
+  [`96139067d`](https://github.com/chakra-ui/chakra-ui/commit/96139067daa4b9a606b60c73f28a88ccd99d983b)]:
+  - @chakra-ui/color-mode@1.1.2
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/styled-system@1.9.0
+
+## 1.4.0
+
+### Minor Changes
+
+- [`53408372e`](https://github.com/chakra-ui/chakra-ui/commit/53408372ef6926840815a03f2ac5269e3a4757f2)
+  [#3463](https://github.com/chakra-ui/chakra-ui/pull/3463) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - - Add support for CSS
+  Variables to the core of Chakra
+  - Improve style computation performance by 2.5x
+
+* [`1f4d0aa4e`](https://github.com/chakra-ui/chakra-ui/commit/1f4d0aa4eff7ba3caffb0599eb81edfb223a36cc)
+  [#3462](https://github.com/chakra-ui/chakra-ui/pull/3462) Thanks
+  [@joe-bell](https://github.com/joe-bell)! - ### `chakra`
+
+  Adds support for `main` in chakra factory
+
+### Patch Changes
+
+- Updated dependencies
+  [[`53408372e`](https://github.com/chakra-ui/chakra-ui/commit/53408372ef6926840815a03f2ac5269e3a4757f2),
+  [`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/styled-system@1.8.0
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/color-mode@1.1.1
+
 ## 1.3.1
 
 ### Patch Changes

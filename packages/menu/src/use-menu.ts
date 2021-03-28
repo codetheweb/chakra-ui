@@ -15,21 +15,22 @@ import { usePopper, UsePopperProps } from "@chakra-ui/popper"
 import {
   addItem,
   callAllHandlers,
-  createContext,
   dataAttr,
-  EventKeyMap,
   focus,
   getNextIndex,
   getNextItemFromSearch,
   getPrevIndex,
-  getValidChildren,
   isArray,
   isString,
-  mergeRefs,
-  mergeWith,
-  normalizeEventKey,
   removeItem,
 } from "@chakra-ui/utils"
+import {
+  mergeRefs,
+  createContext,
+  normalizeEventKey,
+  getValidChildren,
+  EventKeyMap,
+} from "@chakra-ui/react-utils"
 import * as React from "react"
 
 const [MenuProvider, useMenuContext] = createContext<UseMenuReturn>({
@@ -112,7 +113,6 @@ export function useMenu(props: UseMenuProps) {
   const popper = usePopper({
     placement,
     ...props,
-    enabled: isOpen,
   })
 
   const [focusedIndex, setFocusedIndex] = React.useState(-1)
@@ -144,7 +144,7 @@ export function useMenu(props: UseMenuProps) {
 
   const openAndFocusMenu = React.useCallback(() => {
     onOpen()
-    if (menuRef.current) focus(menuRef.current)
+    focus(menuRef.current, { nextTick: true })
   }, [onOpen, menuRef])
 
   const openAndFocusFirstItem = React.useCallback(() => {
@@ -253,6 +253,7 @@ export function useMenuButton(
 
   const buttonProps = {
     ...props,
+    ref: mergeRefs(menu.buttonRef, externalRef, popper.referenceRef),
     id: menu.buttonId,
     "data-active": dataAttr(menu.isOpen),
     "aria-expanded": menu.isOpen,
@@ -262,10 +263,7 @@ export function useMenuButton(
     onKeyDown: callAllHandlers(props.onKeyDown, onKeyDown),
   }
 
-  return popper.getReferenceProps(
-    buttonProps,
-    mergeRefs(menu.buttonRef, externalRef),
-  )
+  return buttonProps
 }
 
 /**
@@ -298,7 +296,6 @@ export function useMenuList(
     isOpen,
     onClose,
     menuId,
-    popper,
     domContext: { descendants },
     isLazy,
   } = menu
@@ -361,7 +358,7 @@ export function useMenuList(
     [descendants, focusedIndex, onCharacterPress, onClose, setFocusedIndex],
   )
 
-  const menulistProps: any = {
+  return {
     ...props,
     ref: mergeRefs(menuRef, ref),
     children: !isLazy || isOpen ? props.children : null,
@@ -370,20 +367,20 @@ export function useMenuList(
     id: menuId,
     style: {
       ...props.style,
-      transformOrigin: popper.transformOrigin,
+      transformOrigin: "var(--popper-transform-origin)",
     },
     "aria-orientation": "vertical" as React.AriaAttributes["aria-orientation"],
     onKeyDown: callAllHandlers(props.onKeyDown, onKeyDown),
   }
-
-  return menulistProps
 }
 
 export function useMenuPositioner(props: any = {}) {
   const { popper, isOpen } = useMenuContext()
-  return mergeWith(popper.getPopperProps(props), {
+  return {
+    ...props,
+    ref: popper.popperRef,
     style: { visibility: isOpen ? "visible" : "hidden" },
-  })
+  }
 }
 
 export interface UseMenuItemProps
@@ -481,7 +478,7 @@ export function useMenuItem(
   useUpdateEffect(() => {
     if (!isOpen) return
     if (isFocused && !trulyDisabled && ref.current) {
-      focus(ref.current)
+      focus(ref.current, { nextTick: true })
     } else if (document.activeElement !== menuRef.current) {
       menuRef.current?.focus()
     }

@@ -1,11 +1,11 @@
-import { useControllableProp } from "@chakra-ui/hooks"
+import { useCallbackRef, useControllableProp } from "@chakra-ui/hooks"
 import {
-  countDecimalPlaces,
   clampValue,
+  countDecimalPlaces,
   maxSafeInteger,
   minSafeInteger,
-  toPrecision,
   StringOrNumber,
+  toPrecision,
 } from "@chakra-ui/utils"
 import { useCallback, useState } from "react"
 
@@ -66,9 +66,11 @@ export function useCounter(props: UseCounterProps = {}) {
     keepWithinRange = true,
   } = props
 
+  const onChangeProp = useCallbackRef(onChange)
+
   const [valueState, setValue] = useState<StringOrNumber>(() => {
     if (defaultValue == null) return ""
-    return cast(defaultValue, stepProp, precisionProp)
+    return cast(defaultValue, stepProp, precisionProp) ?? ""
   })
 
   /**
@@ -83,12 +85,13 @@ export function useCounter(props: UseCounterProps = {}) {
 
   const update = useCallback(
     (next: StringOrNumber) => {
+      if (next === value) return
       if (!isControlled) {
         setValue(next.toString())
       }
-      onChange?.(next.toString(), parse(next))
+      onChangeProp?.(next.toString(), parse(next))
     },
-    [onChange, isControlled],
+    [onChangeProp, isControlled, value],
   )
 
   // Function to clamp the value and round it to the precision
@@ -151,16 +154,17 @@ export function useCounter(props: UseCounterProps = {}) {
     if (defaultValue == null) {
       next = ""
     } else {
-      next = cast(defaultValue, stepProp, precisionProp)
+      next = cast(defaultValue, stepProp, precisionProp) ?? min
     }
     update(next)
-  }, [defaultValue, precisionProp, stepProp, update])
+  }, [defaultValue, precisionProp, stepProp, update, min])
 
   const castValue = useCallback(
     (value: StringOrNumber) => {
-      update(cast(value, stepProp, precision))
+      const nextValue = cast(value, stepProp, precision) ?? min
+      update(nextValue)
     },
-    [precision, stepProp, update],
+    [precision, stepProp, update, min],
   )
 
   const valueAsNumber = parse(value)
@@ -185,6 +189,7 @@ export function useCounter(props: UseCounterProps = {}) {
     decrement,
     clamp,
     cast: castValue,
+    setValue,
   }
 }
 
@@ -199,6 +204,8 @@ function getDecimalPlaces(value: number, step: number) {
 }
 
 function cast(value: StringOrNumber, step: number, precision?: number) {
-  const decimalPlaces = getDecimalPlaces(parse(value), step)
-  return toPrecision(parse(value), precision ?? decimalPlaces)
+  const parsedValue = parse(value)
+  if (Number.isNaN(parsedValue)) return undefined
+  const decimalPlaces = getDecimalPlaces(parsedValue, step)
+  return toPrecision(parsedValue, precision ?? decimalPlaces)
 }

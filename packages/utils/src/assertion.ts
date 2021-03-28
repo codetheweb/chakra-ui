@@ -1,4 +1,3 @@
-import { ChangeEvent } from "react"
 import { Dict } from "./types"
 
 // Number assertions
@@ -60,11 +59,6 @@ export function isCssVar(value: string) {
   return /^var\(--.+\)$/.test(value)
 }
 
-// Event assertions
-export function isInputEvent(value: any): value is ChangeEvent {
-  return value && isObject(value) && isObject(value.target)
-}
-
 // Empty assertions
 export const isEmpty = (value: any) => {
   if (isArray(value)) return isEmptyArray(value)
@@ -75,3 +69,6 @@ export const isEmpty = (value: any) => {
 
 // eslint-disable-next-line @typescript-eslint/naming-convention
 export const __DEV__ = process.env.NODE_ENV !== "production"
+
+export const isRefObject = (val: any): val is { current: any } =>
+  "current" in val

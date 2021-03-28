@@ -1,5 +1,88 @@
 # Change Log
 
+## 1.7.1
+
+### Patch Changes
+
+- [`96139067d`](https://github.com/chakra-ui/chakra-ui/commit/96139067daa4b9a606b60c73f28a88ccd99d983b)
+  [#3551](https://github.com/chakra-ui/chakra-ui/pull/3551) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - NumberInput: add `root` to
+  parts, leverage css variables and update styles to be rtl friendly.
+
+* [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)
+  [#3583](https://github.com/chakra-ui/chakra-ui/pull/3583) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - - Refactor arrow
+  components to use `data-popper-arrow` and `data-popper-arrow-inner` to define
+  the arrow elements. This is used within the modifiers to update the arrow
+  styles/position positioning.
+
+  - Change `arrowSize` and `arrowShadowColor` to use CSS custom properties
+    instead of passing it to `usePopper`.
+
+  - Update component themes to use `--popper-arrow-bg` to set the background for
+    the popper's arrow element.
+
+- [`eece70293`](https://github.com/chakra-ui/chakra-ui/commit/eece70293fb095d016a1ef8f2e367422b3e02ef5)
+  [#3622](https://github.com/chakra-ui/chakra-ui/pull/3622) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - - Added typings for the
+  `theme` prop in `ThemingPropsThunk` and export a standalone type
+  `ThemeComponentProps`
+
+  ```ts
+  import { ThemeComponentProps } from "@chakra-ui/react"
+
+  function baseStyle(props: ThemeComponentProps) {
+    return {
+      boxShadow: `0 1px 2px 0 rgba(0, 0, 0, 0.05) ${props.theme.colors.whiteAlpha[500]}`,
+    }
+  }
+  ```
+
+- Updated dependencies
+  [[`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/theme-tools@1.1.1
+
+## 1.7.0
+
+### Minor Changes
+
+- [`87e42eb64`](https://github.com/chakra-ui/chakra-ui/commit/87e42eb6410846d0041a7e88e2c771d15d596f25)
+  [#3463](https://github.com/chakra-ui/chakra-ui/pull/3463) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - Add new config property
+  `cssVarPrefix` to add a custom prefix for CSS variables. It defaults to
+  `chakra`.
+
+* [`f032942c8`](https://github.com/chakra-ui/chakra-ui/commit/f032942c8a2568a3a23baee0d5972834345e5fa6)
+  [#3447](https://github.com/chakra-ui/chakra-ui/pull/3447) Thanks
+  [@dodas](https://github.com/dodas)! - `TabPanels` component can now be styled
+  from `Tabs` component theme, specifying the `tabpanels` part.
+
+### Patch Changes
+
+- [`7efc9c217`](https://github.com/chakra-ui/chakra-ui/commit/7efc9c217789b2b314ed629c94b947256e8cbe2c)
+  [#3454](https://github.com/chakra-ui/chakra-ui/pull/3454) Thanks
+  [@tomdohnal](https://github.com/tomdohnal)! - - Fix full size modal with
+  y-overflowing content behaviour
+  - Fix border styles for alert and number input
+
+* [`280d0dbfd`](https://github.com/chakra-ui/chakra-ui/commit/280d0dbfdd8894ab4aa228ac7ef816008a5d0824)
+  [#3439](https://github.com/chakra-ui/chakra-ui/pull/3439) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - Provide proper typings for
+  `ThemeOverride.components`
+
+- [`39375c15b`](https://github.com/chakra-ui/chakra-ui/commit/39375c15b64635ea3f59d9f5ad1f31851f9f018b)
+  [#3486](https://github.com/chakra-ui/chakra-ui/pull/3486) Thanks
+  [@with-heart](https://github.com/with-heart)! - Resolved an issue where
+  `optgroup` in dark mode was unreadable on browsers that allow `select`
+  contents styling.
+- Updated dependencies
+  [[`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d),
+  [`d77f63415`](https://github.com/chakra-ui/chakra-ui/commit/d77f63415822ad26e4f6ed133e4869c07fa72306)]:
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/theme-tools@1.1.0
+
 ## 1.6.2
 
 ### Patch Changes

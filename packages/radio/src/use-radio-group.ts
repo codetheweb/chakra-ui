@@ -1,11 +1,7 @@
 import { useControllableProp, useId } from "@chakra-ui/hooks"
-import {
-  isInputEvent,
-  mergeRefs,
-  PropGetter,
-  StringOrNumber,
-} from "@chakra-ui/utils"
+import { StringOrNumber } from "@chakra-ui/utils"
 import * as React from "react"
+import { mergeRefs, isInputEvent, PropGetter } from "@chakra-ui/react-utils"
 
 type EventOrValue = React.ChangeEvent<HTMLInputElement> | StringOrNumber
 
@@ -24,7 +20,7 @@ export interface UseRadioGroupProps {
    * Function called once a radio is checked
    * @param nextValue the value of the checked radio
    */
-  onChange?(nextValue: StringOrNumber): void
+  onChange?(nextValue: string): void
   /**
    * The `name` attribute forwarded to each `radio` element
    */
@@ -103,7 +99,7 @@ export function useRadioGroup(props: UseRadioGroupProps = {}) {
         setValue(nextValue)
       }
 
-      onChangeProp?.(nextValue)
+      onChangeProp?.(String(nextValue))
     },
     [onChangeProp, isControlled],
   )
@@ -124,7 +120,7 @@ export function useRadioGroup(props: UseRadioGroupProps = {}) {
         ...props,
         ref,
         name,
-        [checkedKey]: value ? props.value === value : "",
+        [checkedKey]: value != null ? props.value === value : undefined,
         onChange,
       }
     },

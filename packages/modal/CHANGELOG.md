@@ -1,5 +1,46 @@
 # Change Log
 
+## 1.7.0
+
+### Minor Changes
+
+- [`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92)
+  [#3623](https://github.com/chakra-ui/chakra-ui/pull/3623) Thanks
+  [@with-heart](https://github.com/with-heart)! - Added support for
+  `framer-motion` v4
+
+### Patch Changes
+
+- Updated dependencies
+  [[`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92),
+  [`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`9c143bfe5`](https://github.com/chakra-ui/chakra-ui/commit/9c143bfe5bbf180929fabb0a1b4c18d40f7fd3fc),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/transition@1.1.0
+  - @chakra-ui/hooks@1.2.0
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/focus-lock@1.1.2
+  - @chakra-ui/close-button@1.1.3
+  - @chakra-ui/portal@1.1.3
+
+## 1.6.1
+
+### Patch Changes
+
+- [`79ff8e84e`](https://github.com/chakra-ui/chakra-ui/commit/79ff8e84e4a8f70d3abe969d68d8bfbb63c18471)
+  [#3427](https://github.com/chakra-ui/chakra-ui/pull/3427) Thanks
+  [@TheAsda](https://github.com/TheAsda)! - - Add drawer example to modal readme
+  - Fix github references in drawer and alert-dialog docs
+- Updated dependencies
+  [[`83ae62905`](https://github.com/chakra-ui/chakra-ui/commit/83ae62905935fdb3104380d6fd845159b00095fa),
+  [`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/hooks@1.1.5
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/close-button@1.1.2
+  - @chakra-ui/portal@1.1.2
+  - @chakra-ui/transition@1.0.9
+  - @chakra-ui/focus-lock@1.1.1
+
 ## 1.6.0
 
 ### Minor Changes

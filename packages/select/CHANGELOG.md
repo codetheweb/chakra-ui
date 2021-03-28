@@ -1,5 +1,29 @@
 # Change Log
 
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/form-control@1.2.3
+
+## 1.1.2
+
+### Patch Changes
+
+- [`39375c15b`](https://github.com/chakra-ui/chakra-ui/commit/39375c15b64635ea3f59d9f5ad1f31851f9f018b)
+  [#3486](https://github.com/chakra-ui/chakra-ui/pull/3486) Thanks
+  [@with-heart](https://github.com/with-heart)! - Resolved an issue where
+  `optgroup` in dark mode was unreadable on browsers that allow `select`
+  contents styling.
+- Updated dependencies
+  [[`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/form-control@1.2.2
+
 ## 1.1.1
 
 ### Patch Changes

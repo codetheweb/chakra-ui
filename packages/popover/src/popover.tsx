@@ -10,13 +10,8 @@ import {
   useStyles,
   HTMLChakraProps,
 } from "@chakra-ui/system"
-import {
-  createContext,
-  cx,
-  MaybeRenderProp,
-  runIfFn,
-  __DEV__,
-} from "@chakra-ui/utils"
+import { cx, runIfFn, __DEV__ } from "@chakra-ui/utils"
+import { createContext, MaybeRenderProp } from "@chakra-ui/react-utils"
 import { motion, Variants } from "framer-motion"
 import * as React from "react"
 import { usePopover, UsePopoverProps, UsePopoverReturn } from "./use-popover"
@@ -60,7 +55,7 @@ export interface PopoverProps extends UsePopoverProps, ThemingProps<"Popover"> {
   children?: MaybeRenderProp<{
     isOpen: boolean
     onClose: () => void
-    forceUpdate: (() => void) | null
+    forceUpdate: (() => void) | undefined
   }>
 }
 
@@ -254,18 +249,21 @@ if (__DEV__) {
 export interface PopoverArrowProps extends HTMLChakraProps<"div"> {}
 
 export const PopoverArrow: React.FC<PopoverArrowProps> = (props) => {
-  const { getArrowProps, getArrowPositionerProps } = usePopoverContext()
+  const { bg, bgColor, backgroundColor } = props
   const styles = useStyles()
-
+  const arrowBg = bg ?? bgColor ?? backgroundColor
   return (
-    <chakra.div
-      {...getArrowPositionerProps()}
-      className={cx("chakra-popover__arrow-positioner", props.className)}
-    >
+    <chakra.div data-popper-arrow className="chakra-popover__arrow-positioner">
       <chakra.div
         className={cx("chakra-popover__arrow", props.className)}
-        {...getArrowProps(props)}
-        __css={styles.arrow}
+        {...props}
+        data-popper-arrow-inner
+        __css={{
+          ...styles.arrow,
+          ...(arrowBg && {
+            "--popper-arrow-bg": `colors.${arrowBg}, ${arrowBg}`,
+          }),
+        }}
       />
     </chakra.div>
   )

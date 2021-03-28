@@ -1,5 +1,42 @@
 # Change Log
 
+## 1.0.20
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a576f4de8`](https://github.com/chakra-ui/chakra-ui/commit/a576f4de850706ea7088c8a6ea687269cad05e69)]:
+  - @chakra-ui/styled-system@1.9.1
+  - @chakra-ui/react@1.4.1
+
+## 1.0.19
+
+### Patch Changes
+
+- [`102d6da86`](https://github.com/chakra-ui/chakra-ui/commit/102d6da86d2186b186468b9b6801cb89a217a522)
+  [#3510](https://github.com/chakra-ui/chakra-ui/pull/3510) Thanks
+  [@TimKolberger](https://github.com/TimKolberger)! - Extract all hook props for
+  documentation purposes
+
+- Updated dependencies
+  [[`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92),
+  [`035d5726e`](https://github.com/chakra-ui/chakra-ui/commit/035d5726e28396ef487b9801d7e2fa57677c703c),
+  [`c3dcaabbc`](https://github.com/chakra-ui/chakra-ui/commit/c3dcaabbcf52ab9805a622f4e9833ad26cad9318),
+  [`96139067d`](https://github.com/chakra-ui/chakra-ui/commit/96139067daa4b9a606b60c73f28a88ccd99d983b),
+  [`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92)]:
+  - @chakra-ui/react@1.4.0
+  - @chakra-ui/styled-system@1.9.0
+
+## 1.0.18
+
+### Patch Changes
+
+- Updated dependencies
+  [[`53408372e`](https://github.com/chakra-ui/chakra-ui/commit/53408372ef6926840815a03f2ac5269e3a4757f2),
+  [`92adc0dc1`](https://github.com/chakra-ui/chakra-ui/commit/92adc0dc10e609d14439b95ed304a2731247d084)]:
+  - @chakra-ui/styled-system@1.8.0
+  - @chakra-ui/react@1.3.4
+
 ## 1.0.17
 
 ### Patch Changes

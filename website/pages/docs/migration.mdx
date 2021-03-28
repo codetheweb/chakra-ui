@@ -35,7 +35,8 @@ one object.
 with `Box` so you can use pseudo style props, like `_hover`, `_active` in any
 Chakra components.
 
-**Dropped Support of IE11:** We've dropped support of `IE11` [reason](https://github.com/chakra-ui/chakra-ui/pull/2762)
+**Dropped Support of IE11:** We've dropped support of `IE11`
+[reason](https://github.com/chakra-ui/chakra-ui/pull/2762)
 
 ---
 
@@ -50,8 +51,8 @@ fix it.
 - Install the `framer-motion` package. We use this to manage animations and
   transitions within components.
 
-- Remove the `emotion-theming` package. As at emotion v11, `emotion-theming` as
-  been removed and all it's functionality as been migrated to `@emotion/react`.
+- Remove the `emotion-theming` package. As at emotion v11, `emotion-theming` has
+  been removed and all it's functionality has been migrated to `@emotion/react`.
 
 - Rename the `@emotion/core` package to `@emotion/react`. `@emotion/core` was
   recently changed to `@emotion/react` following the v11 release by the
@@ -65,7 +66,7 @@ fix it.
 "dependencies": {
 - "@chakra-ui/core": "^0.8.0",
 + "@chakra-ui/react": "^1.0.0",
-  "framer-motion": ">=3.0.0",
+  "framer-motion": "^4.0.0",
 - "@emotion/core": "^10.0.10",
 + "@emotion/react": "^11.0.0",
   "@emotion/styled": "^11.0.0",
@@ -482,7 +483,8 @@ Renamed `stylePos` to `stylePosition`
 
 ### ListIcon
 
-We deprecated the `icon` prop. To change the icon rendered, kindly use the `as` prop instead.
+We deprecated the `icon` prop. To change the icon rendered, kindly use the `as`
+prop instead.
 
 ### Stack
 
@@ -519,6 +521,10 @@ We deprecated the `icon` prop. To change the icon rendered, kindly use the `as` 
 
 - Removed `preserveScrollBarGap` prop. We preserve scroll bar gap by default to
   prevent any layout shift.
+
+- `ModalCloseButton` now reads the `onClose` action from the `Modal` context - 
+  you no longer need to pass the `onClick` to it. Conversely, the `onClose` prop
+  on `Modal` is now a required prop if you specify `ModalCloseButton`.
 
 - Only pass `size` values defined in the components theme. Hard-coded values
   will be ignored. Update the styles in `theme.components.Modal` to reflect your

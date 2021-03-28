@@ -1,5 +1,49 @@
 # Change Log
 
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies
+  [[`a576f4de8`](https://github.com/chakra-ui/chakra-ui/commit/a576f4de850706ea7088c8a6ea687269cad05e69)]:
+  - @chakra-ui/react@1.4.1
+  - @chakra-ui/props-docs@1.0.20
+
+## 1.1.7
+
+### Patch Changes
+
+- Updated dependencies
+  [[`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92),
+  [`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`035d5726e`](https://github.com/chakra-ui/chakra-ui/commit/035d5726e28396ef487b9801d7e2fa57677c703c),
+  [`4955fe4fa`](https://github.com/chakra-ui/chakra-ui/commit/4955fe4fafa7468f3788583ab4cdac5dad611591),
+  [`102d6da86`](https://github.com/chakra-ui/chakra-ui/commit/102d6da86d2186b186468b9b6801cb89a217a522),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b),
+  [`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92)]:
+  - @chakra-ui/react@1.4.0
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/cli@1.3.0
+  - @chakra-ui/props-docs@1.0.19
+  - @chakra-ui/theme-tools@1.1.1
+
+## 1.1.6
+
+### Patch Changes
+
+- [`79ff8e84e`](https://github.com/chakra-ui/chakra-ui/commit/79ff8e84e4a8f70d3abe969d68d8bfbb63c18471)
+  [#3427](https://github.com/chakra-ui/chakra-ui/pull/3427) Thanks
+  [@TheAsda](https://github.com/TheAsda)! - - Add drawer example to modal readme
+  - Fix github references in drawer and alert-dialog docs
+- Updated dependencies
+  [[`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d),
+  [`d77f63415`](https://github.com/chakra-ui/chakra-ui/commit/d77f63415822ad26e4f6ed133e4869c07fa72306),
+  [`92adc0dc1`](https://github.com/chakra-ui/chakra-ui/commit/92adc0dc10e609d14439b95ed304a2731247d084)]:
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/theme-tools@1.1.0
+  - @chakra-ui/react@1.3.4
+  - @chakra-ui/props-docs@1.0.18
+
 ## 1.1.5
 
 ### Patch Changes

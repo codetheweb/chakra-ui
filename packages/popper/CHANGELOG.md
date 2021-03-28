@@ -1,5 +1,36 @@
 # Change Log
 
+## 2.0.0
+
+### Major Changes
+
+- [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)
+  [#3583](https://github.com/chakra-ui/chakra-ui/pull/3583) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - Refactor the positioning
+  logic to improve stability and leverage CSS custom properties
+
+### Patch Changes
+
+- Updated dependencies
+  [[`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/utils@1.4.0
+
+## 1.1.5
+
+### Patch Changes
+
+- [`e1924c621`](https://github.com/chakra-ui/chakra-ui/commit/e1924c62182969a109b4900b05932caa1b73ed99)
+  [#3477](https://github.com/chakra-ui/chakra-ui/pull/3477) Thanks
+  [@tomdohnal](https://github.com/tomdohnal)! - make the react-popper state in
+  sync with the internal popper instance state
+
+- Updated dependencies
+  [[`83ae62905`](https://github.com/chakra-ui/chakra-ui/commit/83ae62905935fdb3104380d6fd845159b00095fa),
+  [`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/hooks@1.1.5
+  - @chakra-ui/utils@1.3.0
+
 ## 1.1.4
 
 ### Patch Changes

@@ -1,5 +1,64 @@
 # Change Log
 
+## 1.2.0
+
+### Minor Changes
+
+- [`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92)
+  [#3623](https://github.com/chakra-ui/chakra-ui/pull/3623) Thanks
+  [@with-heart](https://github.com/with-heart)! - Added support for
+  `framer-motion` v4
+
+### Patch Changes
+
+- [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)
+  [#3583](https://github.com/chakra-ui/chakra-ui/pull/3583) Thanks
+  [@segunadebayo](https://github.com/segunadebayo)! - - Refactor arrow
+  components to use `data-popper-arrow` and `data-popper-arrow-inner` to define
+  the arrow elements. This is used within the modifiers to update the arrow
+  styles/position positioning.
+
+  - Change `arrowSize` and `arrowShadowColor` to use CSS custom properties
+    instead of passing it to `usePopper`.
+
+  - Update component themes to use `--popper-arrow-bg` to set the background for
+    the popper's arrow element.
+
+* [`9c143bfe5`](https://github.com/chakra-ui/chakra-ui/commit/9c143bfe5bbf180929fabb0a1b4c18d40f7fd3fc)
+  Thanks [@segunadebayo](https://github.com/segunadebayo)! - Update focus utils
+  to use `nextTick` option since its default value is now false in the focus
+  utils
+
+  > `@internal` use only
+
+* Updated dependencies
+  [[`64e8466b5`](https://github.com/chakra-ui/chakra-ui/commit/64e8466b528a027c915b7d2d5f474b08a0800e92),
+  [`e748219f3`](https://github.com/chakra-ui/chakra-ui/commit/e748219f300f0c51b0eb304fce38b014d7bcbc86),
+  [`9c143bfe5`](https://github.com/chakra-ui/chakra-ui/commit/9c143bfe5bbf180929fabb0a1b4c18d40f7fd3fc),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b),
+  [`91ef14839`](https://github.com/chakra-ui/chakra-ui/commit/91ef148397187010804eb8f30307d2ec94c32c5b)]:
+  - @chakra-ui/transition@1.1.0
+  - @chakra-ui/hooks@1.2.0
+  - @chakra-ui/utils@1.4.0
+  - @chakra-ui/popper@2.0.0
+  - @chakra-ui/descendant@1.0.9
+  - @chakra-ui/clickable@1.0.6
+
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies
+  [[`83ae62905`](https://github.com/chakra-ui/chakra-ui/commit/83ae62905935fdb3104380d6fd845159b00095fa),
+  [`e1924c621`](https://github.com/chakra-ui/chakra-ui/commit/e1924c62182969a109b4900b05932caa1b73ed99),
+  [`87cc23e14`](https://github.com/chakra-ui/chakra-ui/commit/87cc23e14814e02cbbfc9737c2356cef682ddd5d)]:
+  - @chakra-ui/hooks@1.1.5
+  - @chakra-ui/popper@1.1.5
+  - @chakra-ui/utils@1.3.0
+  - @chakra-ui/descendant@1.0.8
+  - @chakra-ui/transition@1.0.9
+  - @chakra-ui/clickable@1.0.5
+
 ## 1.1.2
 
 ### Patch Changes

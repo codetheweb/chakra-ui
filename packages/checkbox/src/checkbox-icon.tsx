@@ -1,8 +1,12 @@
 import { chakra, PropsOf } from "@chakra-ui/system"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, CustomDomComponent, motion } from "framer-motion"
 import * as React from "react"
 
-const MotionSvg = motion.custom(chakra.svg)
+// @future: only call `motion(chakra.svg)` when we drop framer-motion v3 support
+const MotionSvg: CustomDomComponent<PropsOf<typeof chakra.svg>> =
+  "custom" in motion
+    ? (motion as any).custom(chakra.svg)
+    : (motion as any)(chakra.svg)
 
 const CheckIcon = (props: PropsOf<typeof MotionSvg>) => (
   <MotionSvg
@@ -93,13 +97,10 @@ export interface CheckboxIconProps extends PropsOf<typeof MotionSvg> {
  */
 export const CheckboxIcon: React.FC<CheckboxIconProps> = (props) => {
   const { isIndeterminate, isChecked, ...rest } = props
+  const IconEl = isIndeterminate ? IndeterminateIcon : CheckIcon
   return (
     <CheckboxTransition open={isChecked || isIndeterminate}>
-      {isIndeterminate ? (
-        <IndeterminateIcon {...rest} />
-      ) : (
-        <CheckIcon {...rest} />
-      )}
+      <IconEl {...rest} />
     </CheckboxTransition>
   )
 }

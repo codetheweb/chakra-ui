@@ -93,11 +93,11 @@ To use Chakra UI components, all you need to do is install the
 `@chakra-ui/react` package and its peer dependencies:
 
 ```sh
-$ yarn add @chakra-ui/react @emotion/react @emotion/styled framer-motion
+$ yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
 
 # or
 
-$ npm i @chakra-ui/react @emotion/react @emotion/styled framer-motion
+$ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^4
 ```
 
 ## Usage
@@ -133,6 +133,7 @@ function Example() {
 
 - JavaScript Starter: https://codesandbox.io/s/chakra-ui-javascript-lzzg9
 - TypeScript Starter: https://codesandbox.io/s/chakra-ui-typescript-pomi8
+- NextJS TypeScript Starter: https://codesandbox.io/s/chakra-ui-next-js-typescript-kxvyr
 
 ## `create-react-app` Templates
 
@@ -402,6 +403,11 @@ Thanks goes to these wonderful people
     <td align="center"><a href="http://anantja.in"><img src="https://avatars.githubusercontent.com/u/509059?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Anant Jain</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=anantja-in" title="Documentation">📖</a></td>
     <td align="center"><a href="https://medium.com/@tomchentw"><img src="https://avatars.githubusercontent.com/u/922234?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Tom Chen</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=tomchentw" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/emiranda04"><img src="https://avatars.githubusercontent.com/u/11409613?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Ernie Miranda</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=emiranda04" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/bjoluc"><img src="https://avatars.githubusercontent.com/u/25661029?v=4?s=64" width="64px;" alt=""/><br /><sub><b>bjoluc</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=bjoluc" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/psujit"><img src="https://avatars.githubusercontent.com/u/17481888?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Sujit Pradhan</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=psujit" title="Documentation">📖</a> <a href="https://github.com/chakra-ui/chakra-ui/commits?author=psujit" title="Code">💻</a></td>
+    <td align="center"><a href="https://abhishekashyap.tech/"><img src="https://avatars.githubusercontent.com/u/29458374?v=4?s=64" width="64px;" alt=""/><br /><sub><b>Abhishek Kashyap</b></sub></a><br /><a href="https://github.com/chakra-ui/chakra-ui/commits?author=abhishekashyap" title="Documentation">📖</a></td>
   </tr>
 </table>
 

@@ -11,8 +11,9 @@ import {
   useMultiStyleConfig,
   useStyles,
 } from "@chakra-ui/system"
-import { cx, MaybeRenderProp, runIfFn, __DEV__ } from "@chakra-ui/utils"
-import { motion, Variants } from "framer-motion"
+import { cx, runIfFn, __DEV__ } from "@chakra-ui/utils"
+import { MaybeRenderProp } from "@chakra-ui/react-utils"
+import { CustomDomComponent, motion, Variants } from "framer-motion"
 import * as React from "react"
 import {
   MenuProvider,
@@ -34,7 +35,7 @@ export interface MenuProps extends UseMenuProps, ThemingProps<"Menu"> {
   children: MaybeRenderProp<{
     isOpen: boolean
     onClose: () => void
-    forceUpdate: (() => void) | null
+    forceUpdate: (() => void) | undefined
   }>
 }
 
@@ -141,13 +142,17 @@ const motionVariants: Variants = {
   },
 }
 
-const Motion = chakra(motion.div)
+// @future: only call `motion(chakra.div)` when we drop framer-motion v3 support
+const MotionDiv: CustomDomComponent<PropsOf<typeof chakra.div>> =
+  "custom" in motion
+    ? (motion as any).custom(chakra.div)
+    : (motion as any)(chakra.div)
 
 export const MenuList = forwardRef<MenuListProps, "div">((props, ref) => {
   const { rootProps, ...rest } = props
   const { isOpen, onTransitionEnd } = useMenuContext()
 
-  const listProps = useMenuList(rest, ref)
+  const listProps: any = useMenuList(rest, ref)
   const positionerProps = useMenuPositioner(rootProps)
 
   const styles = useStyles()
@@ -157,7 +162,7 @@ export const MenuList = forwardRef<MenuListProps, "div">((props, ref) => {
       {...positionerProps}
       __css={{ zIndex: props.zIndex ?? styles.list?.zIndex }}
     >
-      <Motion
+      <MotionDiv
         {...listProps}
         /**
          * We could call this on either `onAnimationComplete` or `onUpdate`.
@@ -202,7 +207,7 @@ const StyledMenuItem = forwardRef<StyledMenuItemProps, "button">(
       display: "flex",
       width: "100%",
       alignItems: "center",
-      textAlign: "left",
+      textAlign: "start",
       flex: "0 0 auto",
       outline: 0,
       ...styles.item,
@@ -256,9 +261,7 @@ export const MenuItem = forwardRef<MenuItemProps, "button">((props, ref) => {
   const shouldWrap = icon || command
 
   const _children = shouldWrap ? (
-    <chakra.span pointerEvents="none" flex="1">
-      {children}
-    </chakra.span>
+    <span style={{ pointerEvents: "none", flex: 1 }}>{children}</span>
   ) : (
     children
   )
@@ -325,7 +328,7 @@ export const MenuItemOption = forwardRef<MenuItemOptionProps, "button">(
         >
           {icon || <CheckIcon />}
         </MenuIcon>
-        <chakra.span flex="1">{optionProps.children}</chakra.span>
+        <span style={{ flex: 1 }}>{optionProps.children}</span>
       </StyledMenuItem>
     )
   },
@@ -366,14 +369,14 @@ export const MenuGroup = forwardRef<MenuGroupProps, "div">((props, ref) => {
   const styles = useStyles()
 
   return (
-    <chakra.div ref={ref} className="chakra-menu__group" role="group">
+    <div ref={ref} className="chakra-menu__group" role="group">
       {title && (
         <chakra.p className={_className} {...rest} __css={styles.groupTitle}>
           {title}
         </chakra.p>
       )}
       {children}
-    </chakra.div>
+    </div>
   )
 })
 
